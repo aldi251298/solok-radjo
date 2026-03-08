@@ -26,7 +26,7 @@ const products: Product[] = [
     id: 1,
     name: "Kopi Drip # Mix Varian",
     description:
-      "Kopi terbaik dari Solok Radjo yang dikemas langsung dengan Drip Kertas, praktis diseduh di rumah, kantor, atau dalam perjalanan.",
+      "Kurasi lima profil rasa berbeda dalam satu kemasan praktis. Solusi cerdas untuk menikmati kopi spesialti di tengah kesibukan mobilitas Anda tanpa mengurangi kualitas ekstraksi.",
     image: "/images/product-drip.jpeg",
     slug: "kopi-drip-mix",
     processTag: "Drip / Mix",
@@ -34,23 +34,73 @@ const products: Product[] = [
   },
   {
     id: 2,
-    name: "Tesora Roasted Beans Natural",
+    name: "Tesora Roasted Natural",
     description:
-      "Biji kopi panggang berkualitas tinggi dengan proses natural yang menonjolkan profil rasa buah khas.",
+      "Eksplorasi rasa buah tropis yang intens hasil dari penjemuran ceri utuh secara perlahan. Menghasilkan kemanisan yang kompleks dengan bodi yang lembut dan aromatik.",
     image: "/images/product-tesora.jpeg",
     slug: "tesora-natural",
     processTag: "Natural Process",
-    cupping: { acidity: 4, body: 4, sweetness: 5, aroma: 5, aftertaste: 4 },
+    cupping: { acidity: 4, body: 3, sweetness: 5, aroma: 5, aftertaste: 4 },
   },
   {
     id: 3,
     name: "Espresso Sumando Blend",
     description:
-      "Racikan espresso spesial Sumando Blend dengan crema tebal dan bodi mantap untuk es kopi susu.",
+      "Perpaduan biji pilihan yang dirancang untuk menghasilkan crema tebal dan bodi yang mantap. Sangat ideal sebagai pondasi menu espresso berbasis susu yang gurih.",
     image: "/images/sumando.webp",
     slug: "espresso-sumando",
     processTag: "Espresso Blend",
     cupping: { acidity: 2, body: 5, sweetness: 3, aroma: 4, aftertaste: 4 },
+  },
+  {
+    id: 4,
+    name: "Espresso Sumandan Blend",
+    description:
+      "Menawarkan keseimbangan rasa yang sempurna dengan tingkat keasaman yang rendah. Pilihan tepat bagi penikmat kopi yang mencari kelembutan dalam setiap tegukan black coffee.",
+    image: "/images/product-sumandan.jpeg",
+    slug: "espresso-sumandan",
+    processTag: "Espresso Blend",
+    cupping: { acidity: 2, body: 4, sweetness: 4, aroma: 4, aftertaste: 4 },
+  },
+  {
+    id: 5,
+    name: "Limau Cirago Honey",
+    description:
+      "Kopi ikonik dengan sentuhan rasa jeruk limau dan hazelnut. Proses honey mempertahankan lendir manis alami yang meresap ke dalam biji saat penjemuran di ketinggian 1.500 mdpl.",
+    image: "/images/honey.jpeg",
+    slug: "limau-cirago-honey",
+    processTag: "Honey Process",
+    cupping: { acidity: 4, body: 4, sweetness: 5, aroma: 5, aftertaste: 4 },
+  },
+  {
+    id: 6,
+    name: "Arabica Solok Natural",
+    description:
+      "Produk unggulan dengan skor cupping di atas 85. Menampilkan karakter winey yang elegan dan bodi yang kuat, mencerminkan kualitas terbaik dari petani binaan Koperasi Solok Radjo.",
+    image: "/images/natural.jpeg",
+    slug: "arabica-natural",
+    processTag: "Natural Process",
+    cupping: { acidity: 4, body: 4, sweetness: 4, aroma: 5, aftertaste: 5 },
+  },
+  {
+    id: 7,
+    name: "Roasted Bean Semi Wash",
+    description:
+      "Mengangkat karakter earthy khas Sumatera dengan kebersihan rasa yang terjaga. Melalui kontrol kualitas ketat, varian ini menawarkan bodi yang sangat tebal dan intens.",
+    image: "/images/semi wash.jpeg",
+    slug: "roasted-semi-wash",
+    processTag: "Semi Washed",
+    cupping: { acidity: 2, body: 5, sweetness: 3, aroma: 4, aftertaste: 4 },
+  },
+  {
+    id: 8,
+    name: "Roasted Bean Full Wash",
+    description:
+      "Kejernihan rasa menjadi nilai utama. Melalui proses cuci bersih yang sempurna, kopi ini menghasilkan keasaman cerah dan floral yang menyegarkan bagi indra perasa Anda.",
+    image: "/images/full wash.jpeg",
+    slug: "roasted-full-wash",
+    processTag: "Full Washed",
+    cupping: { acidity: 4, body: 3, sweetness: 4, aroma: 4, aftertaste: 4 },
   },
 ];
 
@@ -140,6 +190,7 @@ export default function ProductShowcase() {
       className="pt-48 pb-32 bg-[#F8F9F8] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+
         <div className="text-center mb-32 scroll-animate opacity-0 translate-y-16 transition-all duration-1000">
           <span className="text-[#00704A] font-bold tracking-[0.3em] uppercase text-xs mb-6 block">
             Signature Collection
@@ -188,31 +239,11 @@ export default function ProductShowcase() {
                   </p>
 
                   <div className="grid grid-cols-3 sm:grid-cols-5 gap-6 mb-12">
-                    <CircularGauge
-                      label="Acidity"
-                      value={product.cupping.acidity}
-                      color="#D6512A"
-                    />
-                    <CircularGauge
-                      label="Body"
-                      value={product.cupping.body}
-                      color="#5E3F29"
-                    />
-                    <CircularGauge
-                      label="Sweetness"
-                      value={product.cupping.sweetness}
-                      color="#B26A3E"
-                    />
-                    <CircularGauge
-                      label="Aroma"
-                      value={product.cupping.aroma}
-                      color="#00704A"
-                    />
-                    <CircularGauge
-                      label="Aftertaste"
-                      value={product.cupping.aftertaste}
-                      color="#4A1D1F"
-                    />
+                    <CircularGauge label="Acidity" value={product.cupping.acidity} color="#D6512A" />
+                    <CircularGauge label="Body" value={product.cupping.body} color="#5E3F29" />
+                    <CircularGauge label="Sweetness" value={product.cupping.sweetness} color="#B26A3E" />
+                    <CircularGauge label="Aroma" value={product.cupping.aroma} color="#00704A" />
+                    <CircularGauge label="Aftertaste" value={product.cupping.aftertaste} color="#4A1D1F" />
                   </div>
 
                   <Link
@@ -229,6 +260,7 @@ export default function ProductShowcase() {
             );
           })}
         </div>
+
       </div>
     </section>
   );
